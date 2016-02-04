@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 9200.16.0114.0856                                -->
+<workbook source-platform='win' version='9.2' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Active Learning Lab (Light)' inline='true' name='excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8' version='9.2'>
+      <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:\Users\daren\Desktop\CS4222\cs4222_assignment1\Light Sensor Trial 2\Light Readings.xlsx' interpretationMode='0' password='' server='' username='' validate='no'>
+        <relation name='Outdoor' table='[Outdoor$]' type='table'>
+          <columns gridOrigin='A1:D759:no:A1:D759:0' header='no' outcome='6'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='integer' name='F2' ordinal='1' />
+            <column datatype='string' name='F3' ordinal='2' />
+            <column datatype='integer' name='F4' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[Outdoor]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F2</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F2]</local-name>
+            <parent-name>[Outdoor]</parent-name>
+            <remote-alias>F2</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F3</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[F3]</local-name>
+            <parent-name>[Outdoor]</parent-name>
+            <remote-alias>F3</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RSG_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F4</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F4]</local-name>
+            <parent-name>[Outdoor]</parent-name>
+            <remote-alias>F4</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Outdoor]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D759:no:A1:D759:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>false</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='real' default-format='p0.00%' name='[Calculation1]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='RUNNING_SUM(SUM([Number of Records])) / TOTAL(SUM([Number of Records]))'>
+          <table-calc ordering-field='[excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8].[F4]' ordering-type='Field' />
+        </calculation>
+      </column>
+      <column caption='F11' datatype='integer' name='[F1]' role='measure' type='quantitative' />
+      <column datatype='integer' hidden='true' name='[F2]' role='measure' type='quantitative' />
+      <column caption='F41 (bin)' datatype='integer' name='[F41 (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='2' formula='[F4]' peg='0' size='337' />
+      </column>
+      <column caption='F41' datatype='integer' name='[F4]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.467581' measure-ordering='alphabetic' measure-percentage='0.508728' parameter-percentage='0.0236908' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Singapore&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='9.2'>
+      <aliases enabled='yes' />
+      <column caption='Parameter 1' datatype='real' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='0.0'>
+        <calculation class='tableau' formula='0.0' />
+        <range granularity='500.0' max='10500.0' min='0.0' />
+      </column>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Active Learning Lab (Light)' name='excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8' />
+          </datasources>
+          <datasource-dependencies datasource='excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8'>
+            <column caption='F41 (bin)' datatype='integer' name='[F41 (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='2' formula='[F4]' peg='0' size='337' />
+            </column>
+            <column caption='F41' datatype='integer' name='[F4]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[Number of Records]' derivation='Sum' name='[sum:Number of Records:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='6'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8].[sum:Number of Records:qk]</rows>
+        <cols>[excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8].[F41 (bin)]</cols>
+        <show-full-range>
+          <column>[excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8].[F41 (bin)]</column>
+        </show-full-range>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='28'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='type_in' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8].[:Measure Names]</field>
+            <field>[excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8].[F41 (bin)]</field>
+            <field>[excel-direct.0k461yn1m1eq201ds2w5w1ecr1k8].[none:F4:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
