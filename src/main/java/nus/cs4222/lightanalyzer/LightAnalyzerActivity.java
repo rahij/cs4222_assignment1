@@ -36,7 +36,7 @@ public class LightAnalyzerActivity
     extends Activity 
     implements SensorEventListener {
 
-    private static float ENV_THRESHOLD = (float)150.0;
+    private static float ENV_THRESHOLD = (float)450.0;
 
     /** Called when the activity is created. */
     @Override
